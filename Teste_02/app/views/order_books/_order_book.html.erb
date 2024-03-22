@@ -1,0 +1,31 @@
+<h2> Tabela de Solicitação</h2>
+<hr />
+<table class="table table-striped">
+  <thead >
+    <tr>
+      <th class="col">Vínculo</th>
+      <th class="col">Título</th>
+      <th class="col">Autor</th>
+      <th class="col">Edição</th>
+      <th class="col">ISSN</th>
+      <th class="col">Ano da Publicação</th>
+      <th class="col">Editora</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_books.each do |order_book| %>
+      <tr>
+        <td> <strong><%= order_book.bond_type %></strong></td>
+        <td><%= order_book.title %></td>
+        <td><%= order_book.author %></td>
+        <td><%= order_book.edition %></td>
+        <td><%= order_book.issn %></td>
+        <td><%= order_book.year_publication %></td>
+        <td><%= order_book.publishing_company %></td>
+        <td><%= button_to 'Deletar', order_book, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

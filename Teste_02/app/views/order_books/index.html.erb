@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Solicitações de Livros</h1>
+
+<div id="new_book">
+    <%= render "form", order_book: OrderBook.new %>
+</div>
+
+<br/>
+
+<div id="order_books">
+ 
+    <%= render @order_book %>
+   
+ 
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bond_type: MyString
+  title: MyString
+  author: MyString
+  edition: 1
+  issn: 1
+  year_publication: 2024-03-02
+  publishing_company: MyString
+
+two:
+  bond_type: MyString
+  title: MyString
+  author: MyString
+  edition: 1
+  issn: 1
+  year_publication: 2024-03-02
+  publishing_company: MyString

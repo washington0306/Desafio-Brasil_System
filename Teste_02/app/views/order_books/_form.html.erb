@@ -1,0 +1,49 @@
+<%= form_with(model: order_book, :html => {onsubmit: "return validacao()"}) do |form| %>
+
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type == 'alert' ? 'danger' : 'success' %> alert-dismissible fade show" role="alert">
+      <strong><%= message %></strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <%end%>
+
+  <div class="form-group">
+   <strong> <%= form.label :'Vínculo*' %></strong>
+   <%= form.select :bond_type,["Docente", "Dicente", "Tecnico"], {prompt: true}, class:"form-control", id:"bond_type" %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= form.label :'Título*' %></strong>
+    <%= form.text_field :title, class:"form-control", placeholder: "Digite o título do livro", id:"title" %>
+  </div>
+
+  <div class="form-group">
+   <strong> <%= form.label :'Autor*'%></strong>
+     <%= form.text_field :author, class: "form-control", placeholder: "Digite o autor do livro", id:"author" %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= form.label :'Edição*' %></strong>
+    <%= form.number_field :edition, class:"form-control", placeholder: "Digite a edição do livro", min: 1, id:"edition" %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= form.label :'issn*' %></strong>
+    <%= form.number_field :issn, class:"form-control", placeholder: "Digite o ISSN do livro", min: 1, id:"issn" %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= form.label :'Ano*' %></strong>
+     <%= form.date_select :year_publication, { start_year: 1900, end_year: 2019 }, { class: "datepicker", id:"year" } %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= form.label :'Editora*' %></strong>
+     <%= form.text_field :publishing_company, class: "form-control", id:"publishing_company", placeholder: 'Digite a editora do livro' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Solicitar Livro', class: 'btn btn-primary', id:"button" %>
+  </div>
+<% end %>
+
